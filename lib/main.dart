@@ -1,5 +1,30 @@
 import 'package:flutter/material.dart';
 
+class MyButton extends StatelessWidget {
+  const MyButton({super.key});
+
+  @override
+  Widget build(BuildContext context){
+    return GestureDetector(
+      onTap: (){
+        print('Button Tapped');
+      },
+      child: Container(
+        height: 50,
+        padding: const EdgeInsets.all(8),
+        margin: const EdgeInsets.symmetric(horizontal: 8),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.lightGreen[500],
+        ),
+        child: const Center(
+          child: Text("Click Me"),
+        ),
+      ),
+    );
+  }
+}
+
 class MyAppBar extends StatelessWidget {
   const MyAppBar({required this.title, super.key});
 
@@ -43,6 +68,7 @@ class MyScaffold extends StatelessWidget {
           'Example Title',
           style: Theme.of(context).primaryTextTheme.titleLarge,
         )),
+        MyButton(),
         const Expanded(
             child: Center(
           child: Text('Hello World'),

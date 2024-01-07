@@ -68,10 +68,14 @@ class MyScaffold extends StatelessWidget {
           'Example Title',
           style: Theme.of(context).primaryTextTheme.titleLarge,
         )),
-        MyButton(),
         const Expanded(
             child: Center(
-          child: Text('Hello World'),
+              child: Row(
+                children: [
+                  MyButton(),
+                  Text("Hello World")
+                ],
+              ),
         ))
       ],
     ));
